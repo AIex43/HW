@@ -1,11 +1,11 @@
-import { AbstractBook } from "./models/AbstractBook";
 import { Author } from "./models/Author";
 import { Book } from "./models/Book";
-import { BorrowService } from "./services/BorrowService";
-import { Copy } from "./models/Copy";
 import { EBook } from "./models/EBook";
-import { Library } from "./models/Library";
+import { Copy } from "./models/Copy";
 import { Reader } from "./models/Reader";
+import { Library } from "./models/Library";
+import { BorrowService } from "./services/BorrowService";
+// import { AbstractBook } from "./models/AbstractBook";
 
 // Створення автора та книг
 const author = new Author("John Doe");
@@ -55,6 +55,5 @@ console.log("\nBook descriptions:");
 console.log(book.getDescription());
 console.log(ebook.getDescription());
 
-// Спроба створити AbstractBook
-// Повинно викликати помилку компіляції
-// const abstractBook = new AbstractBook('Test', 2022);
+// Спроба створити AbstractBook — має викликати помилку компіляції
+// const abstractBook = new AbstractBook("Test", 2022);
