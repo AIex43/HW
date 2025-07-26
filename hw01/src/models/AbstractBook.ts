@@ -1,3 +1,16 @@
 export abstract class AbstractBook {
-  // TODO: Implement the AbstractBook class
+  protected constructor(
+    private _title: string,
+    private _year: number
+  ) {}
+
+  get title(): string {
+    return this._title;
+  }
+
+  get year(): number {
+    return this._year;
+  }
+
+  abstract getDescription(): string;
 }
