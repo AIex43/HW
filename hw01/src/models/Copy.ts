@@ -1,21 +1,25 @@
 import { AbstractBook } from "./AbstractBook";
-import { Author } from "./Author";
 
-export class Book extends AbstractBook {
-  constructor(
-    title: string,
-    year: number,
-    private _author: Author
-  ) {
-    super(title, year);
-    this._author.addBook(this);
+export class Copy {
+  private _isAvailable: boolean = true;
+
+  constructor(private _book: AbstractBook) {}
+
+  get book(): AbstractBook {
+    return this._book;
   }
 
-  get author(): Author {
-    return this._author;
+  isCopyAvailable(): boolean {
+    return this._isAvailable;
   }
 
-  getDescription(): string {
-    return `Physical book "${this.title}" by ${this.author.name} (${this.year})`;
+  borrow(): boolean {
+    if (!this._isAvailable) return false;
+    this._isAvailable = false;
+    return true;
+  }
+
+  return(): void {
+    this._isAvailable = true;
   }
 }
