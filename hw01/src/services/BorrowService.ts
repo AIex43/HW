@@ -1,30 +1,24 @@
+
+
 import { Reader } from "../models/Reader";
 import { Copy } from "../models/Copy";
 
 export class BorrowService {
 
-  borrow(reader: Reader, copy: Copy): void {
-    if (!copy.getAvailability()) {
-      throw new Error("Цей примірник уже позичений!");
+  borrow(reader: Reader, copy: Copy): boolean {
+    if (!copy.isCopyAvailable()) {
+      return false;
     }
-
-
-    copy.borrow();
-
-
-    reader.borrowCopy(copy);
+    return reader.borrowCopy(copy);
   }
 
-
-  return(reader: Reader, copy: Copy): void {
-
-    copy.return();
-
-
-    const borrowed = reader.getBorrowedCopies();
-    const index = borrowed.indexOf(copy);
-    if (index !== -1) {
-      borrowed.splice(index, 1);
+   
+  returnBook(reader: Reader, copy: Copy): boolean {
+    const hasCopy = reader.borrowedCopies.includes(copy);
+    if (!hasCopy) {
+      return false;
     }
+    reader.returnCopy(copy);
+    return true;
   }
 }

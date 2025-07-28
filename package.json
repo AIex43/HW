@@ -1,0 +1,21 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "Цей репозиторій містить набір домашніх завдань для курсу \"Design Patterns\". Кожна папка або файл — це стартова реалізація певного патерну або їх комбінації, яку студент має довести до логічного завершення.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIex43/HW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AIex43/HW/issues"
+  },
+  "homepage": "https://github.com/AIex43/HW#readme"
+}
